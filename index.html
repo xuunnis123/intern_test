@@ -1,0 +1,543 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>无车承运系统</title>
+    <h1 style="color:#003377;"><center>无车承运系统─新建订单</center></h1>
+        
+         
+        <style type="text/css"> 
+         
+        body{
+            width:800px;
+        }
+        
+      
+        </style>
+        <script type="text/javascript">
+            
+            function showInput(value)
+            { //NameOfPersonQualificationCertificateNumberTelephoneNumber
+                    
+                    if (value===true){
+                        document.getElementById('NameOfPerson').disabled=true;
+                        document.getElementById('QualificationCertificateNumber').disabled=true;
+                        document.getElementById('TelephoneNumber').disabled=true;
+                        
+                    }
+                    else
+                    {
+                       document.getElementById('NameOfPerson').disabled=false;
+                        document.getElementById('QualificationCertificateNumber').disabled=false;
+                        document.getElementById('TelephoneNumber').disabled=false; 
+                        
+                    }
+                    
+                 
+            }
+			function showresult()
+			{
+			
+            /*
+			var url ="" ;
+            url=location.href;
+            var pos=url.indexOf("?");
+            var url1=url.slice(pos+1,);
+            
+           
+            var urlset=url1.replace(/&/g,"<br>");
+            document.write(urlset);
+			*/
+			 var time00="00"	
+			 var form_element = document.getElementById('form');
+			 var OriginalDocumentNumber = form_element[0].value;
+			
+			 var ConsignmentDateTime = form_element[1].value;
+			 ConsignmentDateTime=ConsignmentDateTime.concat("00");
+			 arry=ConsignmentDateTime.split("T");
+			 arr=arry[0].split("-");
+			 arr2=arry[1].split(":");
+			 ConsignmentDateTime=arr[0]+arr[1]+arr[2]+arr2[0]+arr2[1];
+			 
+			 
+			 var ShippingNoteNumber=form_element[2].value;
+			 var BusinessTypeCode=form_element[3].value;
+			 var Carrier=form_element[4].value;
+			 
+			 var DespatchActualDateTime=form_element[5].value;
+			 DespatchActualDateTime=DespatchActualDateTime.concat("00");
+			 arry3=DespatchActualDateTime.split("T");
+			 arr001=arry3[0].split("-");
+			 arr002=arry3[1].split(":");
+			 DespatchActualDateTime=arr001[0]+arr001[1]+arr001[2]+arr002[0]+arr002[1];
+			 
+			 var UnifiedSocialCreditIdentifier=form_element[6].value;
+			 
+			 var GoodsReceiptDateTime=form_element[7].value;
+			 
+			 GoodsReceiptDateTime=GoodsReceiptDateTime.concat("00");
+			 arry2=GoodsReceiptDateTime.split("T");
+			 arr01=arry2[0].split("-");
+			 arr02=arry2[1].split(":");
+			 GoodsReceiptDateTime=arr01[0]+arr01[1]+arr01[2]+arr02[0]+arr02[1];
+			 
+			 var PermitNumber1=form_element[8].value;
+			 var Consignor=form_element[9].value;
+			 var PersonalIdentityDocument=form_element[10].value;
+			 var PlaceOfLoading=form_element[11].value;
+			 var CountrySubdivisionCode1=form_element[12].value;
+			 var Consignee=form_element[13].value;
+			 var GoodsReceiptPlace=form_element[14].value;
+			 var CountrySubdivisionCode2=form_element[15].value;
+			 var TotalMonetaryAmount=form_element[16].value;
+			 var Remark=form_element[17].value;
+			 var LicensePlateTypeCode=form_element[18].value;
+			 var VehicleNumber=form_element[19].value;
+			 var VehicleClassificationCode=form_element[20].value;
+			 var VehicleTonnage=form_element[21].value;
+			 var RoadTransportCertificateNumber=form_element[22].value;
+			 var TrailerVehiclePlateNumber=form_element[23].value;
+			 var Owner=form_element[24].value;
+			 var PermitNumber2=form_element[25].value;
+			 
+			 var save1=form_element[26].value;
+			 var save2=form_element[27].value;
+			 
+			 var NameOfPerson=form_element[28].value;
+			 var QualificationCertificateNumber=form_element[29].value;
+			 var TelephoneNumber=form_element[30].value;
+			 var DescriptionOfGoods=form_element[31].value;
+			 var Cube=form_element[32].value;
+			 var CargoTypeClassificationCode=form_element[33].value;
+			 var TotalNumberOfPackages=form_element[34].value;
+			 var GoodsItemGrossWeight=form_element[35].value;
+			 var FreeText=form_element[36].value;
+			 
+			 //document.write(OriginalDocumentNumber);
+			
+			
+			var strsss=
+			 "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+
+                        + "<Root>"
+                        + "<Header>"
+                        + "<MessageReferenceNumber>I9DeoogUJg8ZBfA</MessageReferenceNumber\>"
+                        + "<DocumentName>无车承运人电子路单</DocumentName>"
+                        + "<DocumentVersionNumber>2015WCCYR</DocumentVersionNumber>"
+                        + "<SenderCode>9285</SenderCode>"
+                        + "<RecipientCode>wcjc0001</RecipientCode>"
+                        + "<MessageSendingDateTime>20161118103252</MessageSendingDateTime>"
+                        + "<MessageFunctionCode>9</MessageFunctionCode>"
+                        + "</Header>"
+                        + "<Body> "
+                        + "<OriginalDocumentNumber>"+OriginalDocumentNumber+"</OriginalDocumentNumber>  "
+                        + "<ShippingNoteNumber>"+ShippingNoteNumber+"</ShippingNoteNumber>"
+                        + "<Carrier>"+Carrier+"</Carrier>  "
+                        + "<UnifiedSocialCreditIdentifier>"+UnifiedSocialCreditIdentifier+"</UnifiedSocialCreditIdentifier>  "
+                        + "<PermitNumber>"+PermitNumber1+"</PermitNumber>  "
+                        + "<ConsignmentDateTime>"+ConsignmentDateTime+"</ConsignmentDateTime>  "
+                        + "<BusinessTypeCode>"+BusinessTypeCode+"</BusinessTypeCode> "
+                        + "<DespatchActualDateTime>"+DespatchActualDateTime+"</DespatchActualDateTime> "
+                        + "<GoodsReceiptDateTime>"+GoodsReceiptDateTime+"</GoodsReceiptDateTime>  "
+                        + "<ConsignorInfo> "
+                        + "<Consignor>"+Consignor+"</Consignor> "
+                        + "<PersonalIdentityDocument>"+PersonalIdentityDocument+"</PersonalIdentityDocument>  "
+                        + "<PlaceOfLoading>"+PlaceOfLoading+"</PlaceOfLoading> "
+                        + "<CountrySubdivisionCode>"+CountrySubdivisionCode1+"</CountrySubdivisionCode>  "
+                        + "</ConsignorInfo> "
+                        + "<ConsigneeInfo> "
+                        + "<Consignee>"+Consignee+"</Consignee> "
+                        + "<GoodsReceiptPlace>"+GoodsReceiptPlace+"</GoodsReceiptPlace> "
+                        + "<CountrySubdivisionCode>"+CountrySubdivisionCode2+"</CountrySubdivisionCode>"
+                        + "</ConsigneeInfo>"
+                        + "<PriceInfo>"
+                        + "<TotalMonetaryAmount>"+TotalMonetaryAmount+"</TotalMonetaryAmount>"
+                        + "<Remark>"+Remark+"</Remark>"
+                        + "</PriceInfo>"
+                        + "<VehicleInfo>"
+                        + "<LicensePlateTypeCode>"+LicensePlateTypeCode+"</LicensePlateTypeCode>"
+                        + "<VehicleNumber>"+VehicleNumber+"</VehicleNumber>"
+                        + "<VehicleClassificationCode>"+VehicleClassificationCode+"</VehicleClassificationCode>"
+                        + "<VehicleTonnage>"+VehicleTonnage+"</VehicleTonnage>"
+                        + "<RoadTransportCertificateNumber>"+RoadTransportCertificateNumber+"</RoadTransportCertificateNumber>"
+                        + "<TrailerVehiclePlateNumber>"+TrailerVehiclePlateNumber+"</TrailerVehiclePlateNumber>"
+                        + "<Owner>"+Owner+"</Owner>"
+                        + "<PermitNumber>"+PermitNumber2+"</PermitNumber>"
+                        + "<Driver>"
+                        + "<NameOfPerson>"+NameOfPerson+"</NameOfPerson>"
+                        + "<QualificationCertificateNumber>"+QualificationCertificateNumber+"</QualificationCertificateNumber>"
+                        + "<TelephoneNumber>"+TelephoneNumber+"</TelephoneNumber>"
+                        + "</Driver>"
+                        + "<GoodsInfo>"
+                        + "<DescriptionOfGoods>"+DescriptionOfGoods+"</DescriptionOfGoods>"
+                        + "<CargoTypeClassificationCode>"+CargoTypeClassificationCode+"</CargoTypeClassificationCode>"
+                        + "<GoodsItemGrossWeight>"+GoodsItemGrossWeight+"</GoodsItemGrossWeight>"
+                        + "<Cube>"+Cube+"</Cube>"
+                        + "<TotalNumberOfPackages>"+TotalNumberOfPackages+"</TotalNumberOfPackages>"
+                        + "</GoodsInfo>"
+                        + "</VehicleInfo>"
+                        + "<FreeText>"+FreeText+"</FreeText>"
+                        + "</Body>"
+                        + "</Root>";
+			document.write('<xmp>');
+			document.write(strsss);
+			document.write('</xmp>');
+			
+			}
+        </script>
+        
+
+    </head>
+    
+    <body style="background-color:white; position: relative ; left:20%;">
+      
+    <form name='form' id='form' action=request.py> <!--action=showresult() method='get'-->
+       
+        <tr>
+        
+            <td>  
+                <label style='color:#7700FF;'>订单资讯<HR style='color:#7700FF;'></label>
+            </td>
+        </tr>
+        
+        <tr>   
+                <td>
+                    原始单号<span style="color:red;">*</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                </td>
+                <td>
+                    <INPUT TYPE=text name="OriginalDocumentNumber" style="border-radius:5px;"required="required"> 
+                </td>
+                <td>
+                    託运日期时间<span style="color:red;">*</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                </td>
+                <td>
+                    <INPUT TYPE=datetime-local name="ConsignmentDateTime"style="border-radius:5px;"required="required">
+                </td>    
+                   
+                    <div style="clear:both;"></div>    
+        </tr> 
+        
+        <tr>     
+            <td>
+                    託运单号<span style="color:red;">*</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                </td>
+                <td>
+                    <INPUT TYPE=text name="ShippingNoteNumber"style="border-radius:5px;"required="required">
+                </td>
+                <td>
+                    业务类型代码<span style="color:red;">*</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    
+                </td>
+                <td>
+                    <select name="BusinessTypeCode"style="width:143px;border-radius:5px;"required="required">
+                        <option value="1002996">干线普货运输</option>
+                        <option value="1003997">城市配送</option>
+                        <option value="1003998">农村配送</option>
+                        <option value="1002998">集装箱运输</option>
+                        <option value="1003999">其他</option>
+                     </select>   
+                </td>   
+                    <div style="clear:both;"></div>  
+            
+        </tr>
+        <tr>
+            <td>
+              
+                    承运人<span style="color:red;">*</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </td>
+            <td>
+                     <INPUT TYPE=text name="Carrier"style="border-radius:5px;"required="required"> 
+            </td>
+            <td>
+                    发运实际日期时间<span style="color:red;">*</span>
+            </td>
+            <td>
+                    <INPUT TYPE=datetime-local name="DespatchActualDateTime"style="border-radius:5px;"required="required"> 
+            </td>   
+                    <div style="clear:both;"></div>  
+        </tr>
+            
+        <tr>
+            <td>
+                    统一社会信用&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </td>
+            <td>
+                     <INPUT TYPE=text name="UnifiedSocialCreditIdentifier"style="border-radius:5px;"> 
+            </td>
+            <td>
+                    收货日期时间<span style="color:red;">*</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </td>
+            <td>
+                    <INPUT TYPE=datetime-local name="GoodsReceiptDateTime"style="border-radius:5px;"required="required"> 
+            </td>
+                    <div style="clear:both;"></div>  
+          </tr>
+          <tr>
+            
+               
+              <td>许可证编号</td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <td>
+                     <INPUT TYPE=text name="PermitNumber"style="border-radius:5px;"> 
+              </td> 
+            
+             
+            </tr>
+            <br>
+            <br><label style='color:#7700FF;'>发货方与收货方</label><HR style='color:#7700FF;'>
+       
+        <tr>
+            <td>
+               
+                发货人&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </td>
+            <td>
+                <INPUT TYPE=text name="Consignor"style="border-radius:5px;">
+            </td>
+                
+            
+        </tr>
+        <tr>
+                
+                 <td>身分证件号&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                 <td>
+                     <input type="text" placeholder="请输入身份证号码" name="PersonalIdentityDocument" class="form-control" maxlength="18"
+                            pattern="(^[1-9]([0-9]{16}|[0-9]{13})[xX0-9]$)" style="border-radius:5px;">
+                   
+                 </td>
+        
+               
+        </tr>
+        <br>
+        <tr>
+            
+                    <td>装货地点&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                    <td>
+                    <INPUT TYPE=text name="PlaceOfLoading"style="border-radius:5px;"> 
+                    </td>
+        </tr>
+        <tr>
+                    <td>国家行政区划代码<span style="color:red;">*</span></td>
+                    <td>
+                    <INPUT TYPE=text name="CountrySubdivisionCode"style="border-radius:5px;"required="required"placeholder="请输入六位行政区划代码" pattern="(\d{6})">
+                    </td>
+            </tr>
+            <br>
+            <br>
+        <td>收货人&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+            <td>
+                <INPUT TYPE=text name="Consignee"style="border-radius:5px;">
+            </td> 
+              <td>
+                 收货地点&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                 
+                 </td>
+                 <td>
+                 <INPUT TYPE=text name="GoodsReceiptPlace"style="border-radius:5px;">
+                 </td>
+                 <br>
+        
+                 <tr>
+                    <td>国家行政区划代码<span style="color:red;">*</span>
+                    </td>
+                    <td>
+                    <INPUT TYPE=text name="CountrySubdivisionCode2"style="border-radius:5px;"required="required"pattern="(\d{6})"placeholder="请输入六位行政区划代码">
+                    </td>
+            
+                </tr>
+            
+            <br><br>
+            
+            <label style='color:#7700FF;'>费用</label><HR style='color:#7700FF;'>
+            <tr>
+                        
+                        <td>总金额<span style="color:red;">*</span></td>
+                        <td>
+                        <INPUT TYPE=text name="TotalMonetaryAmount"style="border-radius:10px;"required="required"pattern="^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$"placeholder="限填入数字如:1.0"> 
+                        </td>
+                        <td>
+                        备注
+                        </td>
+                        <td>
+                        <INPUT TYPE=text name="Remark"style="border-radius:5px;">   
+                        </td>
+                        </tr>
+        
+          <br><br><label style='color:#7700FF;'>车辆讯息与驾驶员</label><HR style='color:#7700FF;'>
+                        <tr>
+                            <td>牌照类型代码<span style="color:red;">*</span></td>
+                            <td>
+                    <select name="LicensePlateTypeCode"style="width:105px;border-radius:5px;"required="required">
+                        <option value="01">大型汽车号牌</option>
+                        <option value="02">小型汽车号牌</option>
+                        <option value="99"> 其他号牌</option>
+                        
+                     </select>
+                            
+            </tr>
+            
+            <tr>
+                <td>
+                车辆牌照号<span style="color:red;">*</span>    
+                </td>
+                <td>
+                    <INPUT TYPE=text name="VehicleNumber"style="width:105px;border-radius:5px;"required="required"> 
+                </td>
+               
+            </tr>
+            <tr>
+                
+                <td>车辆分类代码<span style="color:red;">*</span></td>
+                <td>
+                <select name="VehicleClassificationCode" style="width:120px;border-radius:5px;"required="required">
+                        <option value="H01">普通货车</option>
+                        <option value="H02">厢式货车</option>
+                        <option value="H04">罐式货车</option>
+                        <option value="Q00">牵引车</option>
+                        <option value="G01">普通挂车</option>
+                        <option value="G03">罐式挂车</option>
+                        <option value="G05">集装箱挂车</option>
+                        <option value="H09">仓栅式货车</option>
+                        <option value="H03">封闭货车</option>
+                        <option value="H05">平板货车</option>
+                        <option value="H06">集装箱车</option>
+                        <option value="H07">自卸货车</option>
+                        <option value="H08">特殊结构货车</option>
+                        <option value="Z00">专项作业车</option>
+                        <option value="G02">厢式挂车</option>
+                        <option value="G07">仓栅式挂车</option>
+                        <option value="G04">平板挂车</option>
+                        <option value="G06">自卸挂车</option>
+                        <option value="G09">专项作业挂车</option>
+                        <option value="X91">车辆运输车</option>
+                        <option value="X92">车辆运输车(单排)</option>
+                    </select>
+                </td>
+            </tr>
+            <br>
+             <tr>
+            
+                
+                <td>车辆载质量<span style="color:red;">*</span>&nbsp&nbsp&nbsp&nbsp</td>
+                <td>
+                <INPUT TYPE=text name="VehicleTonnage"style="width:105px;border-radius:5px;"required="required"pattern="^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$"placeholder="限填入数字如:1.0">    
+                </td>
+            </tr>
+                
+            
+            <tr>
+                <td>道路运输证<span style="color:red;">*</span></td>
+                <td>
+                <INPUT TYPE=text name="RoadTransportCertificateNumber"style="width:105px;border-radius:5px;"required="required">   
+                </td>
+            </tr>
+                
+                
+            <tr>
+                
+                <td>挂车牌照号</td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <td>
+                <INPUT TYPE=text name="TrailerVehiclePlateNumber"style="width:120px;border-radius:5px;">    
+                </td>
+            </tr>
+            <br>
+            
+                
+                <td>车辆所有人</td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <td>
+                <INPUT TYPE=text name="Owner"style="width:105px;border-radius:5px;">   
+                </td>
+                
+                
+           
+                <td>许可证编号</td>&nbsp&nbsp
+                <td>
+                <INPUT TYPE=text name="PermitNumber"style="width:105px;border-radius:5px;">   
+                </td>
+           
+            <br>
+              <tr> 
+                    <input type="Radio" id="inputdriver" onclick="showInput(true)">不填写驾驶员资讯
+                    <input type="Radio" id="inputdriver"  onclick="showInput(false)">填写驾驶员资讯
+          </tr>
+          <br>
+            <tr>
+               </td>
+                            <td>姓名&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                            <td>
+                <INPUT TYPE=text name="NameOfPerson" id="NameOfPerson"style="width:105px;border-radius:5px;">
+                            </td>
+                 <td>
+                    从业资格证号
+                </td>
+                <td>
+                <INPUT TYPE=text name="QualificationCertificateNumber" id="QualificationCertificateNumber"style="width:105px;border-radius:5px;">   
+                </td>
+                            <td>
+                  电话号码&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  
+                </td>
+                <td>
+                <INPUT TYPE=text name="TelephoneNumber" id="TelephoneNumber"style="width:105px;border-radius:5px;"pattern="(\d*)">  
+                </td>
+                
+            </tr>
+           
+                
+          
+        
+            <br>
+            <br><label style='color:#7700FF;'>货物</label><HR style='color:#7700FF;'>
+          
+          <tr>
+              <td>货物名称<span style="color:red;">*</span></td>
+              <td>
+                 <INPUT TYPE=text name="DescriptionOfGoods"style="border-radius:5px;"required="required">  
+              </td>
+              <td>
+                  体积</td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <td>
+                 <INPUT TYPE=text name="Cube"style="border-radius:5px;"pattern="^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$"placeholder="限填入数字如:1.0">         
+              </td>
+            </tr>
+            
+            <tr>
+                <td>货物类型分类代码<span style="color:red;">*</span></td>
+                <td>  
+                     <select name="CargoTypeClassificationCode"style="width:120px ;border-radius:5px;"required="required">
+                         <option value="90">电子产品</option>
+                         <option value="92">商品汽车</option>
+                         <option value="93">冷藏货物</option>
+                         <option value="94">大宗货物</option>
+                         <option value="95">快速消费品</option>
+                         <option value="96">农产品</option>
+                         <option value="999">其他</option>
+                     </select>
+                </td>  
+             
+                <td>总件数</td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <td>
+                     <INPUT TYPE=text name="TotalNumberOfPackages"style="border-radius:5px;"pattern="(\d*)"placeholder="限填入数字">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                
+                    货物项毛重<span style="color:red;">*</span></td>
+                <td>
+                     <INPUT TYPE=text name="GoodsItemGrossWeight"style="border-radius:5px;"required="required"pattern="^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$"placeholder="限填入数字如:1.0">
+                </td>
+            
+                <td>
+                     其他&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                </td>
+                <td>
+                     <INPUT TYPE=text name="FreeText"style="border-radius:5px;width:120px ;">
+                </td>  
+            </tr>
+        <p></p>   
+    <nobr><center><input type="submit" onclick='showresult();'style="background-color:#007799;color: white;" >
+        <input type="reset"  action=""style="background-color:#666666;color: white;"></center></nobr>
+    </form>
+        
+     
+    </body>
